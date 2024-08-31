@@ -1,0 +1,18 @@
+---
+version: "2"
+services:
+  nekton:
+    image: mwoodward6/mrg:humble
+    container_name: mrg
+    environment:
+      - DISPLAY=:1.0
+      - USER=root
+    volumes:
+      - <PATH_GOES_HERE>:/root/mrg_ws # Replace <PATH_GOES_HERE> with the path to your mrg_ws folder (If you cloned it to your home directory in WSL this would be /home/$USER/mrg_ws)
+    ports:
+      - 6080:80
+      - 5900:5900
+      - 9090:9090
+      - 8080:8080
+    tty: true
+    restart: unless-stopped
