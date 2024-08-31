@@ -47,7 +47,7 @@ If for some reason you prefer the X11 method of displaying GUI based application
     1. Open `terminal`
     2. Go to the folder you want to put the MRG_Docker repo in
     4. Run `git clone https://github.com/chachmu/MRG_Docker.git`
-    7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/USERS/$User/mrg_ws`)
+    7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/USERS/$USER/mrg_ws`)
 3. Pull the docker container by running `docker pull mwoodward6/mrg:humble`
     * If you get errors then open Docker Desktop and check that the docker engine icon in the bottom left is green.
 5. You are now ready to [run the docker container](https://github.com/chachmu/MRG_Docker#running-the-docker-container)
