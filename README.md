@@ -31,7 +31,7 @@ You are welcome to install and run everything however you want but the method of
     3. Run `sudo apt install docker-compose`
     4. Run `git clone https://github.com/chachmu/MRG_Docker.git`
     6. Create an `mrg_ws` folder on your computer wherever you intend to store your MRG projects.
-    7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/home/$USER/mrg_ws`)
+    7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/home/<Insert your Username>/mrg_ws`)
 4. Pull the docker container by running `docker pull mwoodward6/mrg:humble`
     * If you get errors then open Docker Desktop and check that the docker engine icon in the bottom left is green. If it is then check in the settings under Resources: WSL Integration` that the checkbox is enabled and that the Ubuntu distro you are using is enabled. If none of this has fixed the issue sometimes restarting Docker Desktop can also help.
 5. You are now ready to [run the docker container](https://github.com/chachmu/MRG_Docker#running-the-docker-container)
@@ -47,7 +47,7 @@ If for some reason you prefer the X11 method of displaying GUI based application
     1. Open `terminal`
     2. Go to the folder you want to put the MRG_Docker repo in
     4. Run `git clone https://github.com/chachmu/MRG_Docker.git`
-    7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/USERS/$USER/mrg_ws`)
+    7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/USERS/<Insert your Username>/mrg_ws`)
 3. Pull the docker container by running `docker pull mwoodward6/mrg:humble`
     * If you get errors then open Docker Desktop and check that the docker engine icon in the bottom left is green.
 5. You are now ready to [run the docker container](https://github.com/chachmu/MRG_Docker#running-the-docker-container)
