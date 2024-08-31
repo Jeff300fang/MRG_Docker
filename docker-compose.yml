@@ -1,7 +1,7 @@
 ---
 version: "2"
 services:
-  nekton:
+  mrg:
     image: mwoodward6/mrg:humble
     container_name: mrg
     environment:
