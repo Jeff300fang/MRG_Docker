@@ -29,7 +29,7 @@ ENV USER=root \
 
 # install runtime dependencies, vim, gedit, and xacro
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    libgoogle-glog-dev python3-dev python3-pip python3-numpy vim \
+    libgoogle-glog-dev python3-dev python3-pip python3-numpy vim python3-sdformat13 \
     gedit ros-humble-xacro ros-humble-rosbridge-suite python-is-python3
 RUN pip3 install transforms3d
     
