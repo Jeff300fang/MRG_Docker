@@ -4,7 +4,7 @@ This repository provides the scripts to build and run the MRG Docker container.
 ## Running the docker container:
 1. Open whatever terminal you want to use (`Ubuntu` if you are on Windows, `terminal` if you are on MacOS)
 2. Go to the MRG_Docker folder (`cd MRG_Docker`)
-3. Run `./session.sh` (if it says permission denied run `chmod +x start.sh` and try again)
+3. Run `./session.sh` (if it says permission denied run `chmod +x session.sh` and try again)
 4. The MRG_Docker container is now running and you can either go to `localhost:6080` in a browser to access the GUI or enter commands into the terminal that you used.
 5. Any time you want a terminal you can either open one using the GUI you loaded in your web browser or by running `./session.sh` again in your terminal of choice.
 6. When you are done with a terminal opened using `session.sh` make sure to use the `exit` command to close the session before closing the terminal window. When you have closed all the open sessions the docker container will automatically stop running.
@@ -28,11 +28,10 @@ You are welcome to install and run everything however you want but the method of
 3. Set up Ubuntu and clone the repo
     1. Open `Ubuntu` from the start menu
     2. Run `sudo apt update`
-    3. Run `sudo apt install docker-compose`
-    4. Run `git clone https://github.com/chachmu/MRG_Docker.git`
-    6. Create an `mrg_ws` folder on your computer wherever you intend to store your MRG projects.
-    7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/home/<Insert your Username>/mrg_ws`)
-4. Pull the docker container by running `docker pull mwoodward6/mrg:humble`
+    3. Run `git clone https://github.com/chachmu/MRG_Docker.git`
+    4. Create an `mrg_ws` folder on your computer wherever you intend to store your MRG projects.
+    5. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/home/<Insert your Username>/mrg_ws`)
+4. Pull the docker container by running `docker pull mwoodward6/mrg:jazzy`
     * If you get errors then open Docker Desktop and check that the docker engine icon in the bottom left is green. If it is then check in the settings under Resources: WSL Integration` that the checkbox is enabled and that the Ubuntu distro you are using is enabled. If none of this has fixed the issue sometimes restarting Docker Desktop can also help.
 5. You are now ready to [run the docker container](https://github.com/chachmu/MRG_Docker#running-the-docker-container)
 
@@ -48,6 +47,6 @@ If for some reason you prefer the X11 method of displaying GUI based application
     2. Go to the folder you want to put the MRG_Docker repo in
     4. Run `git clone https://github.com/chachmu/MRG_Docker.git`
     7. Edit line 13 of the file in the MRG_Docker folder called `docker-compose.yml` to replace the <PATH_GOES_HERE> portion with the path to the `mrg_ws` folder. (If you put your folder in your home directory then the path would be `/USERS/<Insert your Username>/mrg_ws`)
-3. Pull the docker container by running `docker pull mwoodward6/mrg:humble`
+3. Pull the docker container by running `docker pull mwoodward6/mrg:jazzy`
     * If you get errors then open Docker Desktop and check that the docker engine icon in the bottom left is green.
 5. You are now ready to [run the docker container](https://github.com/chachmu/MRG_Docker#running-the-docker-container)
