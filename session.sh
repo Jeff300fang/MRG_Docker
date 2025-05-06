@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Name of docker container
-ContainerName="mrg"
+ContainerName="mrg_tutorial"
 
 # path to the compose file
 CF=$(dirname "$0")/docker-compose.yml
