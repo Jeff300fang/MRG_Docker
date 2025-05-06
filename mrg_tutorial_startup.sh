@@ -15,19 +15,25 @@ sudo apt-get update -y
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # Make mrg directory if does not exist
-sudo mkdir -p /var/mrg/tutorial_ws/src
+mkdir -p ${HOME}/mrg/tutorial_ws/src
 
 # Go to folder
-cd /var/mrg/tutorial_ws/src
+cd ${HOME}/mrg/tutorial_ws/src
 
 # Clone tutorial
 git clone https://github.com/gt-marine-robotics-group/ROS_Tutorial.git
 
 # Set up docker
-sudo mkdir -p /var/mrg/tutorial_docker_ws
+mkdir -p ${HOME}/mrg/tutorial_docker_ws
 
-cd /var/mrg/tutorial_docker_ws
+cd ${HOME}/mrg/tutorial_docker_ws
 
+# Clone docker tutorial branch
+git clone -b tutorial https://github.com/Jeff300fang/MRG_Docker.git
+
+cd MRG_Docker
+
+./session.sh
 
 
 
