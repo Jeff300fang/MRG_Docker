@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     libgoogle-glog-dev python3-dev python3-pip python3-numpy vim \
     gedit ros-jazzy-xacro ros-jazzy-rosbridge-suite python-is-python3
 RUN pip3 install --break-system-packages transforms3d
+
+RUN apt-get install tmux -y && apt-get install tmuxp -y
     
 WORKDIR /root
 
@@ -34,3 +36,10 @@ RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc \
     && echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> /root/.bashrc \
     && echo "test -f ~/mrg_ws/install/setup.bash && source ~/mrg_ws/install/setup.bash" >> /root/.bashrc \
     && echo "cd ~/mrg_ws;" >> /root/.bashrc
+
+
+# Create a directory for tmuxp projects
+RUN mkdir -p /root/.tmuxp
+
+COPY tmuxp_config.yaml /root/.tmuxp/tmuxp_config.yaml
+COPY .tmux.conf /root/.tmux.conf

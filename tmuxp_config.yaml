@@ -1,0 +1,27 @@
+session_name: tutorial_tmux
+shell_command_before:
+- source install/setup.bash
+windows:
+- window_name: p6
+  focus: True
+  layout: tiled
+  panes:
+  - focus: true
+  -
+  -
+  -
+  -
+  -
+- window_name: p4
+  layout: tiled
+  panes:
+  - focus: true
+  - 
+  - 
+  -
+- window_name: p3
+  layout: main-horizontal
+  panes:
+  - focus: true
+  - 
+  - 
