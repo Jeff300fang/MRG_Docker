@@ -39,8 +39,6 @@ echo "alias start_tutorial_docker='${HOME}/mrg/tutorial_docker_ws/MRG_Docker/ses
 
 source ~/.bashrc
 
-./session.sh
-
 
 
 
