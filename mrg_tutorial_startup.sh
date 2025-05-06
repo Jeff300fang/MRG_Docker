@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install docker
 sudo apt-get update -y
 sudo apt-get install ca-certificates curl -y
@@ -14,21 +16,36 @@ sudo apt-get update -y
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
+# Start docker
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Add user to docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
 # Make mrg directory if does not exist
-sudo mkdir -p /var/mrg/tutorial_ws/src
+mkdir -p ${HOME}/mrg/tutorial_ws/src
 
 # Go to folder
-cd /var/mrg/tutorial_ws/src
+cd ${HOME}/mrg/tutorial_ws/src
 
 # Clone tutorial
 git clone https://github.com/gt-marine-robotics-group/ROS_Tutorial.git
 
 # Set up docker
-sudo mkdir -p /var/mrg/tutorial_docker_ws
+mkdir -p ${HOME}/mrg/tutorial_docker_ws
 
-cd /var/mrg/tutorial_docker_ws
+cd ${HOME}/mrg/tutorial_docker_ws
 
+# Clone docker tutorial branch
+git clone -b tutorial https://github.com/Jeff300fang/MRG_Docker.git
 
+cd MRG_Docker
 
+# Create alias
+echo "alias start_tutorial_docker='${HOME}/mrg/tutorial_docker_ws/MRG_Docker/session.sh'" >> ~/.bashrc
+source ~/.bashrc
 
-
+docker pull jeff300fang/mrg:jazzy_tutorial
