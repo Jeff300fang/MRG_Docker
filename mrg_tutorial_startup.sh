@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Install docker
 sudo apt-get update -y
 sudo apt-get install ca-certificates curl -y
@@ -33,7 +35,13 @@ git clone -b tutorial https://github.com/Jeff300fang/MRG_Docker.git
 
 cd MRG_Docker
 
+echo "alias start_tutorial_docker='${HOME}/mrg/tutorial_docker_ws/MRG_Docker/session.sh'" >> ~/.bashrc
+
+source ~/.bashrc
+
 ./session.sh
+
+
 
 
 

@@ -1,7 +1,7 @@
 services:
   mrg:
     image: jeff300fang/mrg:jazzy_tutorial
-    container_name: mrg
+    container_name: mrg_tutorial
     environment:
       - DISPLAY=:1.0
       - USER=root
