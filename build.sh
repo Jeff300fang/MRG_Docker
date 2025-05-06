@@ -13,4 +13,4 @@
 #docker buildx build --platform=linux/amd64 -t mwoodward6/mrg:humble --load .
 
 # generate and push both versions to dockerhub, make sure to set the tag
-docker buildx build --platform linux/amd64,linux/arm64 -t mwoodward6/mrg:jazzy --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t jeff300fang/mrg:jazzy_tutorial --push .
