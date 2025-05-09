@@ -34,6 +34,9 @@ cd ${HOME}/mrg/tutorial_ws/src
 # Clone tutorial
 git clone https://github.com/gt-marine-robotics-group/ROS_Tutorial.git
 
+# Clone stinger-software
+git clone https://github.com/gt-marine-robotics-group/stinger-software.git
+
 # Set up docker
 mkdir -p ${HOME}/mrg/tutorial_docker_ws
 
