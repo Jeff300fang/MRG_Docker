@@ -12,10 +12,10 @@ ENV USER=root \
 # install runtime dependencies, vim, gedit, and xacro
 # removed python3-sdformat14 because gazebo osrf public keys are broken rn, hope we don't need it
 RUN apt-get update && apt-get install --no-install-recommends -y \
-    libgoogle-glog-dev python3-dev python3-pip python3-numpy vim \
+    libgoogle-glog-dev python3-dev python3-pip vim \
     gedit ros-jazzy-xacro ros-jazzy-rosbridge-suite python-is-python3
 RUN pip3 install --break-system-packages transforms3d
-
+RUN pip3 install --break-system-packages numpy==1.26.1
 RUN apt-get install tmux -y && apt-get install tmuxp -y
     
 WORKDIR /root
