@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Get users github username
+read -p "Enter your GitHub username (for cloning your fork): " GH_USERNAME
+
+# Check if user has forked both repositories
+curl --silent --fail "https://github.com/${GH_USERNAME}/ROS_Tutorial" > /dev/null || { echo "Fork of ROS_Tutorial not found!"; exit 1; }
+curl --silent --fail "https://github.com/${GH_USERNAME}/stinger-software" > /dev/null || { echo "Fork of stinger-software not found!"; exit 1; }
+
 # Install docker
 sudo apt-get update -y
 sudo apt-get install ca-certificates curl -y
@@ -32,10 +39,10 @@ mkdir -p ${HOME}/mrg/tutorial_ws/src
 cd ${HOME}/mrg/tutorial_ws/src
 
 # Clone tutorial
-git clone https://github.com/gt-marine-robotics-group/ROS_Tutorial.git
+git clone https://github.com/${GH_USERNAME}/ROS_Tutorial.git
 
 # Clone stinger-software
-git clone https://github.com/gt-marine-robotics-group/stinger-software.git
+git clone https://github.com/${GH_USERNAME}/stinger-software.git
 
 # Set up docker
 mkdir -p ${HOME}/mrg/tutorial_docker_ws
