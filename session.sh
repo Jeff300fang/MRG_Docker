@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Name of docker container
-ContainerName="mrg_tutorial"
+ContainerName="mrg_robotx"
 
 # path to the compose file
 CF=$(dirname "$0")/docker-compose_nvidia.yml

@@ -1,7 +1,7 @@
 services:
   mrg:
-    image: jeff300fang/mrg:jazzy_tutorial
-    container_name: mrg_tutorial
+    image: jeff300fang/mrg:robotx
+    container_name: mrg_robotx
     environment:
       - DISPLAY=:1.0
       - USER=root
@@ -10,12 +10,13 @@ services:
       - QT_X11_NO_MITSHM=1
     runtime: nvidia
     volumes:
-      - ${HOME}/mrg/tutorial_ws:/root/mrg_ws
+      - ${HOME}/mrg/robotx_ws:/root/mrg_ws
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     ports:
       - 9090:9090
       - 8080:8080
       - 127.0.0.1:6080:80
+      - 127.0.0.1:8765:8765
     tty: true
     restart: unless-stopped
     deploy:
