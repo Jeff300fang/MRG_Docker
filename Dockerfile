@@ -51,3 +51,5 @@ RUN mkdir -p /root/.tmuxp
 COPY tmuxp_config.yaml /root/.tmuxp/tmuxp_config.yaml
 COPY .tmux.conf /root/.tmux.conf
 
+COPY run_rosdep.sh /run_rosdep.sh
+RUN chmod +x /run_rosdep.sh
