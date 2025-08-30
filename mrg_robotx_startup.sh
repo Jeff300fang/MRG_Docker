@@ -33,6 +33,10 @@ cd ${HOME}/mrg/robotx_ws/src
 
 # Clone greenhorn
 git clone https://github.gatech.edu/ASDL-Robotics/greenhorn.git
+git clone https://github.gatech.edu/ASDL-Robotics/lyoko.git
+git clone https://github.gatech.edu/ASDL-Robotics/asdl-wamv.git
+git clone https://github.gatech.edu/ASDL-Robotics/asdl-oak.git
+git clone https://github.com/osrf/vrx.git
 
 # Set up docker
 mkdir -p ${HOME}/mrg/robotx_docker_ws
@@ -48,4 +52,4 @@ cd MRG_Docker
 echo "alias start_robotx_docker='${HOME}/mrg/robotx_docker_ws/MRG_Docker/session.sh'" >> ~/.bashrc
 source ~/.bashrc
 
-docker pull jeff300fang/mrg:jazzy_robotx
+docker pull jeff300fang/mrg:robotx
