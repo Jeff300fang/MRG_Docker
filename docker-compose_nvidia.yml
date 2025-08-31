@@ -3,6 +3,7 @@ services:
     image: jeff300fang/mrg:robotx
     container_name: mrg_robotx
     environment:
+      - SIM_ENV=true
       - DISPLAY=:1.0
       - USER=root
       - NVIDIA_VISIBLE_DEVICES=all
@@ -18,8 +19,6 @@ services:
       - 127.0.0.1:6080:80
       - 127.0.0.1:8765:8765
     tty: true
-    working_dir: /root/mrg_ws
-    command: ["/run_rosdep.sh"]
     restart: unless-stopped
     deploy:
       resources:

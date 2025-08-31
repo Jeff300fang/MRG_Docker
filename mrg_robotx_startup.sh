@@ -20,11 +20,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo systemctl start docker
 sudo systemctl enable docker
 
-# Add user to docker group
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-
 # Make mrg directory if does not exist
 mkdir -p ${HOME}/mrg/robotx_ws/src
 
