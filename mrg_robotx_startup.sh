@@ -20,6 +20,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo systemctl start docker
 sudo systemctl enable docker
 
+# Add user to docker group
+if ! getent group docker > /dev/null 2>&1; then
+    sudo groupadd docker
+fi
+sudo usermod -aG docker $USER
+
 # Make mrg directory if does not exist
 mkdir -p ${HOME}/mrg/robotx_ws/src
 
@@ -38,7 +44,7 @@ mkdir -p ${HOME}/mrg/robotx_docker_ws
 
 cd ${HOME}/mrg/robotx_docker_ws
 
-# Clone docker tutorial branch
+# Clone docker robotx branch
 git clone -b robotx https://github.com/Jeff300fang/MRG_Docker.git
 
 cd MRG_Docker
@@ -47,4 +53,4 @@ cd MRG_Docker
 echo "alias start_robotx_docker='${HOME}/mrg/robotx_docker_ws/MRG_Docker/session.sh'" >> ~/.bashrc
 source ~/.bashrc
 
-docker pull jeff300fang/mrg:robotx
+sudo docker pull jeff300fang/mrg:robotx

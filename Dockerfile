@@ -51,3 +51,7 @@ RUN mkdir -p /root/.tmuxp
 COPY tmuxp_config.yaml /root/.tmuxp/tmuxp_config.yaml
 COPY .tmux.conf /root/.tmux.conf
 
+RUN mkdir -p /root/utils
+COPY ros_ws_bootstrap.sh /root/utils/ros_ws_bootstrap.sh
+RUN chmod +x /root/utils/ros_ws_bootstrap.sh
+RUN echo "alias bootstrap_ws='sh /root/utils/ros_ws_bootstrap.sh'" >> /root/.bashrc
