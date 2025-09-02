@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get users github username
-read -p "Enter your GitHub username (for cloning your fork): " GH_USERNAME < /dev/tty
+read -p "Enter your GitHub username (for cloning your fork): " GH_USERNAME
 
 # Check if user has forked both repositories
 curl --silent --fail "https://github.com/${GH_USERNAME}/ROS_Tutorial" > /dev/null || { echo "Fork of ROS_Tutorial not found!"; exit 1; }
