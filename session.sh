@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Name of docker container
-ContainerName="mrg_robotx"
+ContainerName="mrg_tutorial"
 
 # path to the compose file
 CF=$(dirname "$0")/docker-compose_nvidia.yml
@@ -18,10 +18,10 @@ if [ $(docker compose -f $CF ps | grep $ContainerName | grep -c Up ) == 0 ]; the
 fi
 
 # Start terminal session marked with "MRG Session in the arguments
-docker exec -it $ContainerName /bin/bash -s "MRG RobotX Session";
+docker exec -it $ContainerName /bin/bash -s "MRG Tutorial Session";
 
 # Check if there are any active MRG bash sessions
-if [ $(docker compose -f $CF top | grep -c "/bin/bash -s MRG RobotX Session") == 0 ]; then 
+if [ $(docker compose -f $CF top | grep -c "/bin/bash -s MRG Tutorial Session") == 0 ]; then 
     # The last session has been closed, stop the container
     docker compose -f $CF stop;
 fi

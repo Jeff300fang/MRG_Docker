@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Get users github username
+read -p "Enter your GitHub username (for cloning your fork): " GH_USERNAME
+
+# Check if user has forked both repositories
+curl --silent --fail "https://github.com/${GH_USERNAME}/ROS_Tutorial" > /dev/null || { echo "Fork of ROS_Tutorial not found!"; exit 1; }
+curl --silent --fail "https://github.com/${GH_USERNAME}/stinger-software" > /dev/null || { echo "Fork of stinger-software not found!"; exit 1; }
+
 # Install docker
 sudo apt-get update -y
 sudo apt-get install ca-certificates curl -y
@@ -27,30 +34,29 @@ fi
 sudo usermod -aG docker $USER
 
 # Make mrg directory if does not exist
-mkdir -p ${HOME}/mrg/robotx_ws/src
+mkdir -p ${HOME}/mrg/tutorial_ws/src
 
 # Go to folder
-cd ${HOME}/mrg/robotx_ws/src
+cd ${HOME}/mrg/tutorial_ws/src
 
-# Clone greenhorn
-git clone https://github.gatech.edu/ASDL-Robotics/greenhorn.git
-git clone https://github.gatech.edu/ASDL-Robotics/lyoko.git
-git clone https://github.gatech.edu/ASDL-Robotics/asdl-wamv.git
-git clone https://github.gatech.edu/ASDL-Robotics/asdl-oak.git
-git clone https://github.com/osrf/vrx.git
+# Clone tutorial
+git clone https://github.com/${GH_USERNAME}/ROS_Tutorial.git
+
+# Clone stinger-software
+git clone https://github.com/${GH_USERNAME}/stinger-software.git
 
 # Set up docker
-mkdir -p ${HOME}/mrg/robotx_docker_ws
+mkdir -p ${HOME}/mrg/tutorial_docker_ws
 
-cd ${HOME}/mrg/robotx_docker_ws
+cd ${HOME}/mrg/tutorial_docker_ws
 
-# Clone docker robotx branch
-git clone -b robotx https://github.com/Jeff300fang/MRG_Docker.git
+# Clone docker tutorial branch
+git clone -b tutorial https://github.com/Jeff300fang/MRG_Docker.git
 
 cd MRG_Docker
 
 # Create alias
-echo "alias start_robotx_docker='${HOME}/mrg/robotx_docker_ws/MRG_Docker/session.sh'" >> ~/.bashrc
+echo "alias start_tutorial_docker='${HOME}/mrg/tutorial_docker_ws/MRG_Docker/session.sh'" >> ~/.bashrc
 source ~/.bashrc
 
-sudo docker pull jeff300fang/mrg:robotx
+docker pull jeff300fang/mrg:jazzy_tutorial

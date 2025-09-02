@@ -1,12 +1,12 @@
 services:
   mrg:
-    image: jeff300fang/mrg:robotx
-    container_name: mrg_robotx
+    image: jeff300fang/mrg:jazzy_tutorial
+    container_name: mrg_tutorial
     environment:
       - DISPLAY=:1.0
       - USER=root
     volumes:
-      - ${HOME}/mrg/robotx_ws:/root/mrg_ws
+      - ${HOME}/mrg/tutorial_ws:/root/mrg_ws
     ports:
       - 9090:9090
       - 8080:8080
