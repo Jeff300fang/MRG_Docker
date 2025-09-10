@@ -7,17 +7,6 @@ read -p "Enter your GitHub username (for cloning your fork): " GH_USERNAME
 curl --silent --fail "https://github.com/${GH_USERNAME}/ROS_Tutorial" > /dev/null || { echo "Fork of ROS_Tutorial not found!"; exit 1; }
 curl --silent --fail "https://github.com/${GH_USERNAME}/stinger-software" > /dev/null || { echo "Fork of stinger-software not found!"; exit 1; }
 
-# Install docker
-DOCKER_URL="https://desktop.docker.com/mac/main/amd64/Docker.dmg"
-curl -L -o "$HOME/Downloads/Docker.dmg" "$DOCKER_URL"
-
-sudo hdiutil attach Docker.dmg
-sudo /Volumes/Docker/Docker.app/Contents/MacOS/install
-sudo hdiutil detach /Volumes/Docker
-
-# Start docker
-open -a Docker
-
 # Make mrg directory if does not exist
 mkdir -p ${HOME}/mrg/tutorial_ws/src
 
