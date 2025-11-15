@@ -68,12 +68,11 @@ Set-Location (Join-Path $dockerWsPath "MRG_Docker")
 # ============================================================
 # Create a PowerShell function instead of a Bash alias
 # ============================================================
-$sessionScript = Join-Path $HOME "mrg/tutorial_docker_ws/MRG_Docker/session.sh"
+$sessionPsScript = Join-Path $HOME "mrg/tutorial_docker_ws/MRG_Docker/start_mrg_tutorial.ps1"
 
-# In PowerShell, "aliases" like this are best stored in your profile
 $profileLine = @"
 function Start-TutorialDocker {
-    bash '$sessionScript'
+    & '$sessionPsScript'
 }
 "@
 
