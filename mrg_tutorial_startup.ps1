@@ -71,7 +71,7 @@ Set-Location (Join-Path $dockerWsPath "MRG_Docker")
 $sessionPsScript = Join-Path $HOME "mrg/tutorial_docker_ws/MRG_Docker/start_mrg_tutorial.ps1"
 
 $profileLine = @"
-function Start-TutorialDocker {
+function start_tutorial_docker {
     & '$sessionPsScript'
 }
 "@
